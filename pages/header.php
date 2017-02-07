@@ -7,13 +7,11 @@
             </a>
         </div>
         <div class="col-md-10">
-            <a class="hover_link" href="About.php">About</a>
-            <a class="hover_link" href="Calendar.php">Calendar</a>
-            <a class="hover_link" href="Core.php">Core</a>
-            <a class="hover_link" href="Yosakoi.php">Yosakoi</a>
-            <a class="hover_link" href="NiCE.php">Nikkei Choral Ensemble[NiCE]</a>
-            <a class="hover_link" href="CultureShow.php">Culture Show</a>
-            <!-- <a class="hover_link" href="Remembrance.php">Day of Remembrance</a> -->
+            <a class="hover_link" href="/">Home</a>
+            <a class="hover_link" href="/pages/About.php">About</a>
+            <a class="hover_link" href="/pages/Core.php">Core</a>
+            <a class="hover_link" href="/pages/events.php">Events</a>
+            <a class="hover_link" href="/pages/Calendar.php">Calendar</a>
         </div>
     </div>
 </div>
@@ -30,27 +28,19 @@
                          <div class="responsive-menu">
                             <ul>
                                 <li>
-                                    <a class="hover_link" href="..">
-                                        Home
-                                    </a>
+                                    <a class="hover_link" href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a class="hover_link" href="About.php">About</a>
+                                    <a class="hover_link" href="/pages/About.php">About</a>
                                 </li>
                                 <li>
-                                    <a class="hover_link" href="Calendar.php">Calendar</a>
+                                    <a class="hover_link" href="/pages/Core.php">Core</a>
                                 </li>
                                 <li>
-                                    <a class="hover_link" href="Core.php">Core</a>
+                                    <a class="hover_link" href="/pages/events.php">Events</a>
                                 </li>
                                 <li>
-                                    <a class="hover_link" href="Yosakoi.php">Yosakoi</a>
-                                </li>
-                                <li>
-                                    <a class="hover_link" href="NiCE.php">Nikkei Choral Ensemble[NiCE]</a>
-                                </li>
-                                <li>
-                                    <a class="hover_link" href="CultureShow.php">Culture Show</a>
+                                    <a class="hover_link" href="/pages/Calendar.php">Calendar</a>
                                 </li>
                             </ul>
                          </div>
