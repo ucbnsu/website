@@ -40,7 +40,7 @@
 							Contact
 						</a>
 				</div>
-				<h6 id="copyright">&copy; UC Berkeley Nikkei Student Union 2014</h6>
+				<h6 id="copyright">&copy; UC Berkeley Nikkei Student Union 2017</h6>
 			</div>
 			<div class="col-md-2 green">
 				<h2>Related Campus Orgs</h2>
