@@ -40,44 +40,6 @@
                 <div class="blurb col-sm-6">
                     <h3> Upcoming Events </h3>
                     <a class="blue" href="https://www.facebook.com/groups/NikkeiStudentUnion/events/">https://www.facebook.com/groups/NikkeiStudentUnion/events/</a>
-                    <hr>
-                    <iframe src="https://calendar.google.com/calendar/embed?src=berkeleynsu%40gmail.com&ctz=America/Los_Angeles&title=NSU%20Weekly%20Calendar&amp;showPrint=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-                    <?php
-
-                        function findEvents($cur_date) {
-                            include 'pages/Calendar_data.php';
-                            $events = array();
-                            foreach ($calendar_data as $event) {
-                                if ($event["Date"] == $cur_date) {
-                                    $events[] = $event;
-                                }
-                            }
-                            return $events;
-                        }
-                        date_default_timezone_set("America/Los_Angeles");
-                        $cur_date = new DateTime();
-                        $thirty_days_from_now = (new DateTime())->modify('+30 day');
-                        $events_displayed = 0;
-                        $max_events_displayed = 3;
-
-                        while ($events_displayed < $max_events_displayed && $cur_date < $thirty_days_from_now) {
-                            $events = findEvents($cur_date->format("n/j/Y"));
-                            foreach ($events as $event) {
-                                $event_date = $event["Date"];
-                                $event_name = $event["Name"];
-                                $parts = explode(" ", $event_name);
-                                $first_word = $parts[0];
-
-                                echo '<a class="upcoming_events" href="pages/Event_page.php?query=' . $event_date . $first_word . '">' . $event["Date"] . " " . $event["Name"] .'</a>';
-                                echo '</br>';
-                                echo '</br>';
-                                $events_displayed++;
-                            }
-                            $cur_date->modify('+1 day');
-                        }
-                    ?>
-                </div>
-                <div class="col-sm-6 text-center">
                 </div>
             </div>
         </div>
