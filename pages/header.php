@@ -2,8 +2,8 @@
 <div id="general_nav" class="row green main-nav">
     <div class="text-center push_apart_15">
         <div class="col-md-1 col-md-offset-1">
-            <a href=".." class="navbar-brand">
-                <img id="nsu_logo" src="../pictures/logo_icon_sm.png" alt="NSU Logo">
+            <a href="/" class="navbar-brand">
+                <img id="nsu_logo" src="/pictures/logo_icon_sm.png" alt="NSU Logo">
             </a>
         </div>
         <div class="col-md-10">

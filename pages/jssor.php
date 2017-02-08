@@ -1,5 +1,5 @@
-<script src="../js/jssor.js"></script>
-<script src="../js/jssor.slider.min.js"></script>
+<script src="/js/jssor.js"></script>
+<script src="/js/jssor.slider.min.js"></script>
 <script>
     jQuery(document).ready(function ($) {
         var options = { 

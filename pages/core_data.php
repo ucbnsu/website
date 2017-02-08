@@ -27,18 +27,18 @@ $core_names = array(
 // Name of the pictures in the pictures folder
 // ../ Means to go up a folder (go back to "NSU" folder) and then it goes to "pictures"
 $core_pics = array(
-			" President" => "../pictures/core_president.png",
-			" External Vice President" => "../pictures/core_external.png",
-			" Internal Vice President" => "../pictures/core_internal.png",
-			" Historian" => "../pictures/core_historian.png",
-			" Finance Coordinator" => "../pictures/core_finance.png",
-			" Social Chair" => "../pictures/core_social.png",
-			" Issues Chair" => "../pictures/core_issues.png",
-			" Community Service Chair" => "../pictures/core_community.png",
-			" Publicity Chair" => "../pictures/core_publicity.png",
-			" Culture Show Co-Chair" => "../pictures/core_culture2.png",
-			" Culture Show Co-Chair " => "../pictures/core_culture1.png",
-			" Web and Graphics Chair" => "../pictures/core_graphics.png"
+			" President" => "/pictures/core_president.png",
+			" External Vice President" => "/pictures/core_external.png",
+			" Internal Vice President" => "/pictures/core_internal.png",
+			" Historian" => "/pictures/core_historian.png",
+			" Finance Coordinator" => "/pictures/core_finance.png",
+			" Social Chair" => "/pictures/core_social.png",
+			" Issues Chair" => "/pictures/core_issues.png",
+			" Community Service Chair" => "/pictures/core_community.png",
+			" Publicity Chair" => "/pictures/core_publicity.png",
+			" Culture Show Co-Chair" => "/pictures/core_culture2.png",
+			" Culture Show Co-Chair " => "/pictures/core_culture1.png",
+			" Web and Graphics Chair" => "/pictures/core_graphics.png"
 			);
 
 // You can add fields to the profile page just by adding to this
@@ -165,7 +165,7 @@ for ($row = 0; $row < count($core_names); $row++)
 						echo '<img src="', $picture_directory, '" alt="">';
 					}
 					else {
-						echo '<img src="../pictures/core_filler.png" alt="">';
+						echo '<img src="/pictures/core_filler.png" alt="">';
 					}
 				echo '</td>';
 				echo '<td class="core_member_data_td">';

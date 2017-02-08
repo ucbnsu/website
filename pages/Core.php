@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <?php include 'head.php'; ?>
-    <script src="../js/roster.js"></script>
-    <script src="../js/core.js"></script>
+    <script src="/js/roster.js"></script>
+    <script src="/js/core.js"></script>
 </head>
 <body>
 

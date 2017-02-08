@@ -95,7 +95,7 @@ for ($i = $member_start_index; $i < count($spreadsheet_data); $i++) {
 
     // Display the filler image if something goes wrong or if there is no image
     if (!$img_found) {
-        $output .= '<img src="../pictures/core_filler.png" alt="">';
+        $output .= '<img src="/pictures/core_filler.png" alt="">';
     }
     $output .= '</td>';
 

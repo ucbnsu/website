@@ -3,8 +3,8 @@
     <head>
         <?php include 'head.php' ?>
         <?php include 'jssor.php' ?>
-        <script src="../js/roster.js"></script>
-        <script src="../js/nice.js"></script>
+        <script src="/js/roster.js"></script>
+        <script src="/js/nice.js"></script>
     </head>
     <body>
         <?php include 'header.php' ?>
@@ -17,7 +17,7 @@
                             <div u="slides" class="jssor_yosakoi_slides">
                                 <?php 
                                     include 'generateJssorImages.php' ;
-                                    generate_jssor_images("../pictures/nice/");
+                                    generate_jssor_images("/pictures/nice/");
                                 ?>
                             </div>
                         </div>
