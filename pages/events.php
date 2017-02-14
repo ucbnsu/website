@@ -2,6 +2,7 @@
 include 'settings.php';
 $fbinfo = $ini_array['fb'];
 $eventsinfo = $ini_array['events'];
+$additionalEvents = $eventsinfo['additionalEvents'];
 
 $fb_gid = $fbinfo['groupid'];
 $fb_token = $fbinfo['token'];
@@ -25,13 +26,70 @@ $req_endpoint = '/' . $fb_gid . '/events';
 $response = $fb->sendRequest($req_method, $req_endpoint, $ev_options, $fb_token);
 $event_arr_tmp = $response->getDecodedBody();
 
+// add additional events from config
+foreach ($additionalEvents as $eventId) {
+    $ev = $fb->sendRequest($req_method, '/' . $eventId, $ev_options, $fb_token)->getDecodedBody();
+    array_push($event_arr_tmp['data'], $ev);
+}
+
 // sort events by timestamp
-$event_arr = array();
+$curtimestamp = (new DateTime)->getTimestamp();
+$events_past = array();
+$events_future = array();
 foreach ($event_arr_tmp['data'] as $event) {
     $d = DateTime::createFromFormat(DateTime::ISO8601, $event['start_time']);
-    $event_arr[$d->getTimeStamp()] = $event;
+    if ($d->getTimeStamp() < $curtimestamp) {
+        $events_past[$d->getTimeStamp()] = $event;
+    } else {
+        $events_future[$d->getTimeStamp()] = $event;
+    }
 }
-ksort($event_arr, SORT_NUMERIC);
+ksort($events_past, SORT_NUMERIC);
+ksort($events_future, SORT_NUMERIC);
+?>
+
+<?php
+function eventHtml($timestamp, $event) {
+    $d = new DateTime();
+    $d->setTimestamp($timestamp);
+    $d->setTimezone(new DateTimeZone('America/Los_Angeles'));
+    $event_date = $d->format("l, F j h:iA ");
+    $event_link = 'https://facebook.com/events/' . $event['id'];
+    $event_image = 'event_' . $event['id'] . '.jpg'; // JPEG required at this time
+
+    echo '<div class="col-md-4">';
+    if (file_exists('../pictures/' . $event_image)) {
+        echo '<img src="/pictures/' . $event_image . '" class="img-responsive">';
+    } else {
+        echo '<img src="/pictures/event_default.jpg" class="img-responsive">';
+    }
+    echo "<h3>{$event['name']}</h3>";
+    echo "<p>{$event_date}</p>";
+    if (isset($event['place'])) {
+        echo "<p>{$event['place']['name']}</p>";
+    }
+    echo "<p class=\"text-right\"><a style=\"color:black\" href=\"{$event_link}\">Details</a></p>";
+    echo "</div>";
+}
+
+function displayRow($events) {
+    echo '<div class="row">';
+    foreach ($events as $event) {
+        $d = DateTime::createFromFormat(DateTime::ISO8601, $event['start_time']);
+        $timestamp = $d->getTimeStamp();
+        eventHtml($timestamp, $event);
+    }
+    echo '</div>';
+}
+
+function displayEvents($events_arr) {
+    $i = 0;
+    while ($i < count($events_arr)) {
+        $event_row = array_slice($events_arr, $i, min(3, count($events_arr) - $i));
+        displayRow($event_row);
+        $i += 3;
+    }
+}
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,41 +101,19 @@ ksort($event_arr, SORT_NUMERIC);
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h1>Events this semester</h1>
+                <h1>Upcoming events</h1>
             </div>
         </div>
+
+        <?php displayEvents($events_future); ?>
+
         <div class="row">
-<?php
-// TODO breaks when more than 3 events in array, break into multiple rows
-foreach ($event_arr as $timestamp => $event) {
-    $d = new DateTime();
-    $d->setTimestamp($timestamp);
-    $d->setTimezone(new DateTimeZone('America/Los_Angeles'));
-    $event_date = $d->format("l, F j h:iA ");
-    $event_link = 'https://facebook.com/events/' . $event['id'];
-    $event_image = 'event_' . $event['id'] . '.jpg'; // JPEG required at this time
-?>
-            <div class="col-md-4">
-<?php
-    if (file_exists('../pictures/' . $event_image)) {
-        echo '<img src="/pictures/' . $event_image . '" class="img-responsive">';
-    } else {
-        echo '<img src="/pictures/event_default.jpg" class="img-responsive">';
-    }
-?>
-                <h3><?php echo $event['name'] ?></h3>
-                <p><?php echo $event_date ?></p>
-<?php
-            if (isset($event['place'])) {
-                echo '<p>' . $event['place']['name'] . '</p>';
-            }
-?>
-                <p class="text-right"><a style="color:black" href="<?php echo $event_link ?>">Details</a></p>
+            <div class="col-md-8">
+                <h1>Past events</h1>
             </div>
-<?php
-}
-?>
         </div>
+
+        <?php displayEvents($events_past); ?>
     </div>
     <?php include 'footer.php' ?>
 </body>
