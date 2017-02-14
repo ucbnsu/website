@@ -2,7 +2,11 @@
 include 'settings.php';
 $fbinfo = $ini_array['fb'];
 $eventsinfo = $ini_array['events'];
-$additionalEvents = $eventsinfo['additionalEvents'];
+if (isset($eventsinfo['additionalEvents'])) {
+    $additionalEvents = $eventsinfo['additionalEvents'];
+} else {
+    $additionalEvents = array();
+}
 
 $fb_gid = $fbinfo['groupid'];
 $fb_token = $fbinfo['token'];
