@@ -37,7 +37,7 @@ foreach ($additionalEvents as $eventId) {
 }
 
 // sort events by timestamp
-$curtimestamp = (new DateTime)->getTimestamp();
+$curtimestamp = (new DateTime())->getTimestamp();
 $events_past = array();
 $events_future = array();
 foreach ($event_arr_tmp['data'] as $event) {
