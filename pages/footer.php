@@ -6,9 +6,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <a id="contact" href="Contact.php">
-                    Contact
-                </a>
+                <!-- TODO move styling into css file -->
+                <h2>Contact</h2>
+                <div style="color:white;">
+                    <h4 style="color:white">Tabling</h4>
+                    <p class="footer_link">Upper Sproul</p>
+                    <p class="footer_link">Tuesday - Thursday 10am - 2pm</p>
+                </div>
+                <div style="color:white">
+                    <h4 style="color:white">Email</h4>
+                    <a href="mailto:help@nsu.berkeley.edu" class="footer_link hover_link">help@nsu.berkeley.edu</a>
+                </div>
             </div>
 
 			<div class="col-md-4 green">
