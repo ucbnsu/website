@@ -1,6 +1,7 @@
 <?php
-include 'settings.php';
-$fbinfo = $ini_array['fb'];
+require_once 'settings.php';
+require_once 'facebook_api.php';
+
 $eventsinfo = $ini_array['events'];
 if (isset($eventsinfo['additionalEvents'])) {
     $additionalEvents = $eventsinfo['additionalEvents'];
@@ -10,13 +11,6 @@ if (isset($eventsinfo['additionalEvents'])) {
 
 $fb_gid = $fbinfo['groupid'];
 $fb_token = $fbinfo['token'];
-
-require_once '../sdk/Facebook/autoload.php';
-$fb = new Facebook\Facebook([
-    'app_id'     => $fbinfo['appid'],
-    'app_secret' => $fbinfo['appsecret'],
-    'default_graph_version' => $fbinfo['apiver'],
-]);
 
 $eventsinfo = $ini_array['events'];
 $ev_options = [
