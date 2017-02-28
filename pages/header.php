@@ -11,7 +11,7 @@
             <a class="hover_link" href="/pages/About.php">About</a>
             <a class="hover_link" href="/pages/Core.php">Core</a>
             <a class="hover_link" href="/pages/events.php">Events</a>
-            <a class="hover_link" href="/pages/Calendar.php">Calendar</a>
+            <a class="hover_link" href="/pages/gallery.php">Gallery</a>
         </div>
     </div>
 </div>
@@ -40,7 +40,7 @@
                                     <a class="hover_link" href="/pages/events.php">Events</a>
                                 </li>
                                 <li>
-                                    <a class="hover_link" href="/pages/Calendar.php">Calendar</a>
+                                    <a class="hover_link" href="/pages/gallery.php">Gallery</a>
                                 </li>
                             </ul>
                          </div>
