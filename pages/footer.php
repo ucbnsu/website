@@ -11,7 +11,9 @@
                 <div style="color:white;">
                     <h4 style="color:white">Tabling</h4>
                     <p class="footer_link">Upper Sproul</p>
-                    <p class="footer_link">Tuesday - Thursday 10am - 2pm</p>
+                    <p class="footer_link">Tuesday 11am - 2pm</p>
+                    <p class="footer_link">Wednesday 10am - 1pm</p>
+                    <p class="footer_link">Thursday 11am - 2pm</p>
                 </div>
                 <div style="color:white">
                     <h4 style="color:white">Email</h4>
