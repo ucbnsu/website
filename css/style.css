@@ -94,7 +94,7 @@ p
 
 a
 {
-    color: white;
+    color: gray;
 }
 
 .red
@@ -138,6 +138,12 @@ span
 {
     background-color: #8AA27E;
 }
+
+.white
+{
+    background-color: white;
+}
+
 .nav
 {
     background-color: #8AA27E;
@@ -297,8 +303,17 @@ span
 
 #general_nav
 {
+    width: 100em;
+    z-index: 5;
+    position: fixed;
+    opacity: 0.91;
     font-size: 1.3em;
     padding: 10px 0;
+    height: 50px;
+}
+
+#blank_bar
+{
     height: 50px;
 }
 

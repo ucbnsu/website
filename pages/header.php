@@ -1,5 +1,5 @@
 <?php include_once("analyticstracking.php") ?>
-<div id="general_nav" class="row green main-nav">
+<div id="general_nav" class="row white main-nav">
     <div class="text-center push_apart_15">
         <div class="col-md-1 col-md-offset-1">
             <a href="/" class="navbar-brand">
@@ -47,3 +47,5 @@
                 </div>
             </div>
         </div>
+        
+<div id="blank_bar"></div>
