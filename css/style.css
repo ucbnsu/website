@@ -11,13 +11,11 @@ Gill-Sans
 */
 @font-face
 {
-    font-family: "Opificio";
-    src: url('../fonts/Opificio.ttf') format("truetype");
+    font-family: 'Quicksand', sans-serif;
 }
 *
 {
-    font-family: "Opificio";
-    font-size: 1.05em;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .menu-btn
@@ -118,14 +116,18 @@ span
 .span_icon a:hover
 {
     background-color: #8AA27E;
-    text-decoration: none;
 }
 .hover_link:hover
 {
-    color: #8AA27E;
-    border-radius: 30px;
-    background-color: white;
-    text-decoration: none;
+    color: black;
+}
+.test_hover:hover:
+{
+	display:none;
+}
+.test_hover:hover:before
+{
+	content: "(Home)";
 }
 
 
@@ -310,7 +312,7 @@ span
     position: fixed;
     opacity: 0.91;
     font-size: 1.3em;
-    padding: 10px 0;
+    padding: 12px 0;
     height: 50px;
 }
 

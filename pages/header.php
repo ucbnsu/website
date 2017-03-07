@@ -7,7 +7,7 @@
             </a>
         </div>
         <div class="col-md-10">
-            <a class="hover_link" href="/">Home</a>
+            <a class="hover_link test_hover" href="/">Home</a>
             <a class="hover_link" href="/pages/About.php">About</a>
             <a class="hover_link" href="/pages/Core.php">Core</a>
             <a class="hover_link" href="/pages/events.php">Events</a>
