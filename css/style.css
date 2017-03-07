@@ -127,7 +127,7 @@ span
 }
 .test_hover:hover:before
 {
-	content: "(Home)";
+	/*content: "(Home)";*/
 }
 
 
