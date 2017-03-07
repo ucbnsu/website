@@ -2,27 +2,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap.min.js"></script>
-<div class="footer green">
+<div class="footer white">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <!-- TODO move styling into css file -->
-                <h2>Contact</h2>
-                <div style="color:white;">
+                <h2 style="color:dimgray">Contact</h2>
+                <div style="color:dimgray;">
                     <h4 style="color:white">Tabling</h4>
                     <p class="footer_link">Upper Sproul</p>
                     <p class="footer_link">Tuesday 11am - 2pm</p>
                     <p class="footer_link">Wednesday 10am - 1pm</p>
                     <p class="footer_link">Thursday 11am - 2pm</p>
                 </div>
-                <div style="color:white">
+                <div style="color:dimgray">
                     <h4 style="color:white">Email</h4>
                     <a href="mailto:help@nsu.berkeley.edu" class="footer_link hover_link">help@nsu.berkeley.edu</a>
                 </div>
             </div>
 
-            <div class="col-md-4 green">
-                <h2>Connect with us</h2>
+            <div class="col-md-4">
+                <h2 style="color:dimgray">Connect with us</h2>
                 <span id="facebook" class="span_icon">
                     <a href="https://www.facebook.com/groups/2200207758/">
                         <img src="/pictures/facebook_icon.png" alt="Facebook Logo">
@@ -55,12 +55,12 @@
                 </span>
                 <br />
             </div>
-            <div class="col-md-4 green">
+            <div class="col-md-4 white">
                 <h2><a class="hover_link" href="/pages/external_links.php">External Links</a></h2>
             </div>
         </div>
 
-        <div class="row" style="color:white">
+        <div class="row" style="color:dimgray">
             <br />
             <h6 id="copyright">&copy; UC Berkeley Nikkei Student Union 2017</h6>
             <h6>We are a student group acting independently of the University of California. We take full responsibility for our organization and this web site.</h6>

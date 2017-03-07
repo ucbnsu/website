@@ -8,7 +8,7 @@
 	<?php include 'header.php' ?>
 
 <!-- CONTENT -->
-<div id="general_content" class="row container-fluid">
+<div id="general_content" class="blurb row container-fluid">
 	<div class="col-md-4 col-md-offset-2">
 		<h2> Our Mission </h2>
 		<p>

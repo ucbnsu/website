@@ -286,7 +286,9 @@ span
     margin: 10px 0;
     padding: 20px;
     text-align: center;
-    border: 2px solid #76DDF5;
+	background-color:white;
+	box-shadow: 0 4px 8px 0 lightgray, 0 6px 20px 0 lightgray;
+    /* border: 2px solid #76DDF5; */
 }
 
 #homepage_image
@@ -591,6 +593,7 @@ button:hover
 -------------------------------------------------- */
 html 
 {
+  background-color:ghostwhite;
   position: relative;
   min-height: 100%;
 }
@@ -601,6 +604,7 @@ body
 }
 .footer 
 {
+  box-shadow: 0 4px 8px 0 lightgray, 0 6px 20px 0 lightgray;
   position: absolute;
   bottom: 0;
   width: 100%;
