@@ -17,7 +17,6 @@ Gill-Sans
 {
     font-family: 'Quicksand', sans-serif;
 }
-
 .menu-btn
 {
     display: none;
@@ -86,7 +85,7 @@ Gill-Sans
 
 p
 {
-    font-family: "Carrois Gothic";
+    /*font-family: "Carrois Gothic";*/
     text-align: justify;
 }
 
@@ -264,20 +263,20 @@ span
 {
     margin: 0;
     font-size: 1.5em;
-    font-family: "Opificio";
+    /*font-family: "Opificio";*/
 }
 
 .footer_link
 {
     font-size: 12px;
-    font-family: "Carrois Gothic", Arial;
+    /*font-family: "Carrois Gothic", Arial;*/
     padding: 1px 4px;
 }
 
 .footer h2
 {
     font-size: 1.5em;
-    font-family: "Opificio";
+    /*font-family: "Opificio";*/
     color: white;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -392,12 +391,12 @@ button:hover
     text-align: left;
     vertical-align: top;
     width: 130px;
-    font-family: "Carrois Gothic", Arial;
+    /*font-family: "Carrois Gothic", Arial;*/
 }
 
 .core_data_information
 {
-    font-family: "Carrois Gothic", Arial;
+    /*font-family: "Carrois Gothic", Arial;*/
     text-align: left;
     max-width: 650px;
 }
@@ -529,7 +528,7 @@ button:hover
     vertical-align: top;
     padding: 5px;
     border-radius: 5;
-    font-family: "Carrois Gothic", Arial;
+    /*font-family: "Carrois Gothic", Arial;*/
 }
 
 .calendar_date_empty
