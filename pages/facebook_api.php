@@ -11,4 +11,7 @@ $fb = new Facebook\Facebook([
     'default_graph_version' => $fbinfo['apiver'],
 ]);
 
+$fb_gid = $fbinfo['groupid'];
+$fb_token = $fbinfo['token'];
+
 ?>

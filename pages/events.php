@@ -9,10 +9,6 @@ if (isset($eventsinfo['additionalEvents'])) {
     $additionalEvents = array();
 }
 
-$fb_gid = $fbinfo['groupid'];
-$fb_token = $fbinfo['token'];
-
-$eventsinfo = $ini_array['events'];
 $ev_options = [
     'since' => $eventsinfo['start'],
     'until' => $eventsinfo['end'],
