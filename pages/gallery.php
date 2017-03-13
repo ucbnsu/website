@@ -26,7 +26,7 @@ function albumHtml($album) {
 
     echo '<div class="col-md-4">';
     echo "<h3>{$album['title']}</h3>";
-    echo "<img style=\"width:100%;\" src=\"{$coverUrl}\" ><br />";
+    echo "<a href=\"{$albumUrl}\"><img style=\"width:100%;\" src=\"{$coverUrl}\" ></a><br />";
     echo "<p class=\"text-right\"><a style=\"color:black\" href=\"{$albumUrl}\">Go to Album</a></p>";
     echo "</div>";
 }

@@ -52,11 +52,15 @@ function eventHtml($timestamp, $event) {
     $event_image = 'event_' . $event['id'] . '.jpg'; // JPEG required at this time
 
     echo '<div class="col-md-4">';
+
+    echo "<a href=\"${event_link}\">";
     if (file_exists('../pictures/' . $event_image)) {
         echo '<img src="/pictures/' . $event_image . '" class="img-responsive">';
     } else {
         echo '<img src="/pictures/event_default.jpg" class="img-responsive">';
     }
+    echo '</a>';
+
     echo "<h3>{$event['name']}</h3>";
     echo "<p>{$event_date}</p>";
     if (isset($event['place'])) {
