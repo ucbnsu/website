@@ -9,14 +9,14 @@
                 <!-- TODO move styling into css file -->
                 <h2 style="color:dimgray">Contact</h2>
                 <div style="color:dimgray;">
-                    <h4 style="color:white">Tabling</h4>
+                    <h4>Tabling</h4>
                     <p class="footer_link">Upper Sproul</p>
                     <p class="footer_link">Tuesday 11am - 2pm</p>
                     <p class="footer_link">Wednesday 10am - 1pm</p>
                     <p class="footer_link">Thursday 11am - 2pm</p>
                 </div>
                 <div style="color:dimgray">
-                    <h4 style="color:white">Email</h4>
+                    <h4>Email</h4>
                     <a href="mailto:help@nsu.berkeley.edu" class="footer_link hover_link">help@nsu.berkeley.edu</a>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 </span>
                 <br />
             </div>
-            <div class="col-md-4 white">
+            <div class="col-md-4">
                 <h2><a class="hover_link" href="/pages/external_links.php">External Links</a></h2>
             </div>
         </div>
