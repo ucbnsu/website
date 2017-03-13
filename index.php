@@ -4,7 +4,7 @@
         <?php include 'pages/head.php' ?>
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
-    <body style="background-color:ghostwhite">
+    <body style="background-color:ghostwhite;">
         <?php include 'pages/header.php' ?>
         <?php include_once("pages/analyticstracking.php") ?>
 
