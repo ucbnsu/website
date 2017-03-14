@@ -277,7 +277,6 @@ span
 {
     font-size: 1.5em;
     /*font-family: "Opificio";*/
-    color: white;
     margin-top: 10px;
     margin-bottom: 5px;
 }
@@ -306,18 +305,21 @@ span
 
 #general_nav
 {
-    width: 100em;
+    width: 102%;
+	align-content:center;
+	overflow-x:hidden;
     z-index: 5;
     position: fixed;
     opacity: 0.91;
     font-size: 1.3em;
     padding: 12px 0;
+	padding-left:16%;
     height: 50px;
 }
 
 #blank_bar
 {
-    height: 50px;
+    height: 49px;
 }
 
 #general_nav a
@@ -331,7 +333,6 @@ span
 
 #copyright
 {
-    color: white;
     vertical-align: bottom;
 }
 
@@ -602,6 +603,7 @@ body
 {
   /* Margin bottom by footer height */
   margin-bottom: 500px;
+	overflow-x:hidden;
 }
 .footer 
 {

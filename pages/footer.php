@@ -7,15 +7,15 @@
         <div class="row">
             <div class="col-md-4">
                 <!-- TODO move styling into css file -->
-                <h2 style="color:dimgray">Contact</h2>
-                <div style="color:dimgray;">
+                <h2>Contact</h2>
+                <div>
                     <h4>Tabling</h4>
                     <p class="footer_link">Upper Sproul</p>
                     <p class="footer_link">Tuesday 11am - 2pm</p>
                     <p class="footer_link">Wednesday 10am - 1pm</p>
                     <p class="footer_link">Thursday 11am - 2pm</p>
                 </div>
-                <div style="color:dimgray">
+                <div>
                     <h4>Email</h4>
                     <a href="mailto:help@nsu.berkeley.edu" class="footer_link hover_link">help@nsu.berkeley.edu</a>
                 </div>
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <div class="row" style="color:dimgray">
+        <div class="row">
             <br />
             <h6 id="copyright">&copy; UC Berkeley Nikkei Student Union 2017</h6>
             <h6>We are a student group acting independently of the University of California. We take full responsibility for our organization and this web site.</h6>
