@@ -1,16 +1,6 @@
 <?php
 require_once 'settings.php';
-require_once 'facebook_api.php';
 require_once 'database.php';
-
-$fb_gid = $fbinfo['groupid'];
-$fb_token = $fbinfo['token'];
-
-$ev_options = [
-];
-
-$req_method = 'GET';
-$req_endpoint = '/' . $fb_gid . '/albums';
 
 ?>
 
@@ -30,22 +20,19 @@ function albumHtml($album) {
     echo "<p class=\"text-right\"><a style=\"color:black\" href=\"{$albumUrl}\">Go to Album</a></p>";
     echo "</div>";
 }
-
-function displayRow($row) {
-    echo '<div class="row">';
-    foreach ($row as $album) {
-        albumHtml($album);
-    }
-    echo '</div>';
-}
-
 function displayAlbums() {
-    global $mysqli;
-    $albums = loadGalleryFromDb($mysqli);
+    $db = new DBHelper();
+    $db->connect();
+    $albums = $db->loadGallery();
+
     $i = 0;
     while ($i < count($albums)) {
         $row = array_slice($albums, $i, min(3, count($albums) - $i));
-        displayRow($row);
+        echo '<div class="row">';
+        foreach ($row as $album) {
+            albumHtml($album);
+        }
+        echo '</div>';
         $i += 3;
     }
 }
