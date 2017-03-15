@@ -29,7 +29,6 @@
                 </div>
                 
                 <div class="col-sm-6 text-center">
-                    <h3> Site Under Construction! </h3>
                     <h3> Join our Mailing List! </h3>
                     <?php include 'pages/signup_form.php' ?>
                 </div>
