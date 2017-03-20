@@ -58,24 +58,23 @@ class FBHelper {
 
         $event_arr_tmp = $this->sendRequest($method, $endpoint, $params);
         if ($event_arr_tmp && array_key_exists('data', $event_arr_tmp)) {
-            $event_arr_tmp = $event_arr_tmp['data'];
+            $events = $event_arr_tmp['data'];
         } else {
-            $event_arr_tmp = array();
+            $events = array();
         }
-        if (isset($eventsinfo['additionalEvents'])) {
-            $additionalEvents = $eventsinfo['additionalEvents'];
-        } else {
-            $additionalEvents = array();
-        }
+
         // add additional events from config
-        foreach ($additionalEvents as $eventId) {
-            $eventDetails = $this->getEventDetail($eventId);
-            if ($eventDetails) {
-                array_push($event_arr_tmp['data'], $eventDetails);
+        if ($this->eventsinfo && array_key_exists('additionalEvents', $this->eventsinfo)) {
+            $additionalEvents = $this->eventsinfo['additionalEvents'];
+            foreach ($additionalEvents as $eventId) {
+                $eventDetails = $this->getEventDetail($eventId);
+                if ($eventDetails) {
+                    array_push($events, $eventDetails);
+                }
             }
         }
 
-        return $event_arr_tmp;
+        return $events;
     }
 
     function getEventDetail($eventId) {
