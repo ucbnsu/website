@@ -2,35 +2,14 @@
 require_once 'settings.php';
 require_once 'facebook_api.php';
 
-$eventsinfo = $ini_array['events'];
-if (isset($eventsinfo['additionalEvents'])) {
-    $additionalEvents = $eventsinfo['additionalEvents'];
-} else {
-    $additionalEvents = array();
-}
-
-$ev_options = [
-    'since' => $eventsinfo['start'],
-    'until' => $eventsinfo['end'],
-];
-
-$req_method = 'GET';
-$req_endpoint = '/' . $fb_gid . '/events';
-
-$response = $fb->sendRequest($req_method, $req_endpoint, $ev_options, $fb_token);
-$event_arr_tmp = $response->getDecodedBody();
-
-// add additional events from config
-foreach ($additionalEvents as $eventId) {
-    $ev = $fb->sendRequest($req_method, '/' . $eventId, $ev_options, $fb_token)->getDecodedBody();
-    array_push($event_arr_tmp['data'], $ev);
-}
+$fb = new FBHelper();
+$events = $fb->getEvents();
 
 // sort events by timestamp
 $curtimestamp = (new DateTime())->getTimestamp();
 $events_past = array();
 $events_future = array();
-foreach ($event_arr_tmp['data'] as $event) {
+foreach ($events as $event) {
     $d = DateTime::createFromFormat(DateTime::ISO8601, $event['start_time']);
     if ($d->getTimeStamp() < $curtimestamp) {
         $events_past[$d->getTimeStamp()] = $event;
