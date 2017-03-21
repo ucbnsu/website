@@ -1,4 +1,4 @@
-<form id="mailing_list_form" action="pages/list_serve.php" method="POST">
+<form class="shadow" id="mailing_list_form" action="pages/list_serve.php" method="POST">
     <div>
         <input name="name" type="text" placeholder="Name">
         <br>
