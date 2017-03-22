@@ -1,20 +1,22 @@
 <?php
 require_once 'settings.php';
+require_once 'database.php';
 require_once 'facebook_api.php';
 
-$fb = new FBHelper();
-$events = $fb->getEvents();
+$db = new DBHelper();
+$db->connect();
+$events = $db->loadEvents();
 
 // sort events by timestamp
 $curtimestamp = (new DateTime())->getTimestamp();
 $events_past = array();
 $events_future = array();
 foreach ($events as $event) {
-    $d = DateTime::createFromFormat(DateTime::ISO8601, $event['start_time']);
-    if ($d->getTimeStamp() < $curtimestamp) {
-        $events_past[$d->getTimeStamp()] = $event;
+    $timestamp = $event['time'];
+    if ($timestamp < $curtimestamp) {
+        $events_past[$timestamp] = $event;
     } else {
-        $events_future[$d->getTimeStamp()] = $event;
+        $events_future[$timestamp] = $event;
     }
 }
 ksort($events_past, SORT_NUMERIC);
@@ -22,9 +24,9 @@ ksort($events_future, SORT_NUMERIC);
 ?>
 
 <?php
-function eventHtml($timestamp, $event) {
+function eventHtml($event) {
     $d = new DateTime();
-    $d->setTimestamp($timestamp);
+    $d->setTimestamp($event['time']);
     $d->setTimezone(new DateTimeZone('America/Los_Angeles'));
     $event_date = $d->format("l, F j h:iA ");
     $event_link = 'https://facebook.com/events/' . $event['id'];
@@ -42,9 +44,7 @@ function eventHtml($timestamp, $event) {
 
     echo "<h3>{$event['name']}</h3>";
     echo "<p>{$event_date}</p>";
-    if (isset($event['place'])) {
-        echo "<p>{$event['place']['name']}</p>";
-    }
+    echo "<p>{$event['place']}</p>";
     echo "<p class=\"text-right\"><a style=\"color:black\" href=\"{$event_link}\">Details</a></p>";
     echo "</div>";
 }
@@ -52,9 +52,7 @@ function eventHtml($timestamp, $event) {
 function displayRow($events) {
     echo '<div class="row">';
     foreach ($events as $event) {
-        $d = DateTime::createFromFormat(DateTime::ISO8601, $event['start_time']);
-        $timestamp = $d->getTimeStamp();
-        eventHtml($timestamp, $event);
+        eventHtml($event);
     }
     echo '</div>';
 }
