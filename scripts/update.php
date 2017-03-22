@@ -4,8 +4,13 @@
  * gallery
  * events
  */
+$WEBPATH = '/home/n/ns/nsu/public_html';
+chdir( $WEBPATH . '/pages');
 
-include '../pages/nsu_util.php';
+include 'nsu_util.php';
+
+createEventsTable();
+fetchEvents();
 
 createGalleryTable();
 fetchGalleryAlbums();
