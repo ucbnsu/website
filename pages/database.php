@@ -43,6 +43,25 @@ class DBHelper {
         }
     }
 
+    function insertIntoEvents($id, $name, $time, $place) {
+        if (! isset($this->mysqli)) {
+            return;
+        }
+
+        $insertQuery = 'INSERT INTO events (id, name, time, place) VALUES (?, ?, ?, ?) '
+            . 'ON DUPLICATE KEY UPDATE '
+            . 'name = ?, '
+            . 'time = ?, '
+            . 'place = ?';
+
+        if ($insertStmt = $this->mysqli->prepare($insertQuery)) {
+            $insertStmt->bind_param('sssssss', $id, $name, $time, $place, $name, $time, $place);
+            if (! $insertStmt->execute()) {
+                // TODO handle error
+            }
+        }
+    }
+
     function insertIntoGallery($id, $title, $cover_url) {
         if (! isset($this->mysqli)) {
             return;
@@ -79,6 +98,25 @@ class DBHelper {
 
         // display new albums first
         krsort($gallery, SORT_NUMERIC);
+        return $gallery;
+    }
+
+    function loadEvents() {
+        $events = array();
+
+        $selectQuery = 'SELECT id, name, time, place FROM events LIMIT 100';
+        if ($result = $this->mysqli->query($selectQuery)) {
+            while ($row = $result->fetch_assoc()) {
+                $album = array(
+                    'id' => $row['id'],
+                    'name' => $row['name'],
+                    'time' => $row['time'],
+                    'place' => $row['place']
+                );
+                $gallery[$row['time']] = $album;
+            }
+        }
+
         return $gallery;
     }
 }

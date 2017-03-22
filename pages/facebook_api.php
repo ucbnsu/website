@@ -4,16 +4,6 @@ require_once '../sdk/Facebook/autoload.php';
 
 require_once 'settings.php';
 
-$fbinfo = $ini_array['fb'];
-$fb = new Facebook\Facebook([
-    'app_id'     => $fbinfo['appid'],
-    'app_secret' => $fbinfo['appsecret'],
-    'default_graph_version' => $fbinfo['apiver'],
-]);
-
-$fb_gid = $fbinfo['groupid'];
-$fb_token = $fbinfo['token'];
-
 class FBHelper {
     var $sdk;
     var $fbinfo;
@@ -101,6 +91,7 @@ class FBHelper {
     }
 
     function getCoverPhotoImageSrc($coverId) {
+        $method = 'GET';
         $endpoint = '/' . $coverId;
         $params = [
             'fields' => 'images',
@@ -128,12 +119,14 @@ class FBHelper {
 
     function getAlbums() {
         $method = 'GET';
-        $endpoint = '/' . $fb_gid . '/albums';
+        $endpoint = '/' . $this->gid . '/albums';
         $params = [];
 
         // get list of albums
         $albums = $this->sendRequest($method, $endpoint, $params);
-        if (! $albums) {
+        if ($albums) {
+            $albums = $albums['data'];
+        } else {
             $albums = array();
         }
 
