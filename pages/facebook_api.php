@@ -75,6 +75,39 @@ class FBHelper {
         return $this->sendRequest($method, $endpoint, $params);
     }
 
+    /**
+     * Get event cover photo and save to disk.
+     * Returns relative path of saved image.
+     * On error will return path to default cover.
+     */
+    function getEventCover($eventId) {
+        $COVER_DIR = '/pictures/events';
+
+        $method = 'GET';
+        $endpoint = '/' . $eventId;
+        $params = [
+            'fields' => 'cover',
+        ];
+
+        try {
+            // Get event cover photo
+            $response = $this->sendRequest($method, $endpoint, $params);
+            if ($response) {
+                $coverSrc = $response['cover']['source'];
+                $coverData = file_get_contents($coverSrc);
+
+                $SAVE_DIR = dirname(__FILE__) . "/../pictures/events";
+                if (file_put_contents($SAVE_DIR . "/{$eventId}.jpg", $coverData)) {
+                    return $COVER_DIR . "/{$eventId}.jpg";
+                } else {
+                    throw new Exception("file_put_contents failed");
+                }
+            }
+        } catch (Exception $e) {
+            return $COVER_DIR . "/default.jpg";
+        }
+    }
+
     function getCoverPhotoId($albumId) {
         $method = 'GET';
         $endpoint = '/' . $albumId;

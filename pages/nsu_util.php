@@ -71,6 +71,9 @@ function fetchEvents() {
             }
 
             $db->insertIntoEvents($id, $name, $time, $place);
+
+            // fetch event cover photo
+            $fb->getEventCover($id);
         }
     }
 }

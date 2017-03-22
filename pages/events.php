@@ -30,16 +30,18 @@ function eventHtml($event) {
     $d->setTimezone(new DateTimeZone('America/Los_Angeles'));
     $event_date = $d->format("l, F j h:iA ");
     $event_link = 'https://facebook.com/events/' . $event['id'];
-    $event_image = 'event_' . $event['id'] . '.jpg'; // JPEG required at this time
+
+    $event_image = "/pictures/events/{$event['id']}.jpg"; // JPEG required at this time
+    if (! file_exists('..' . $event_image)) {
+        // fetch image from facebook if not saved
+        $fb = new FBHelper();
+        $event_image = $fb->getEventCover($event['id']);
+    }
 
     echo '<div class="col-md-4">';
 
     echo "<a href=\"${event_link}\">";
-    if (file_exists('../pictures/' . $event_image)) {
-        echo '<img src="/pictures/' . $event_image . '" class="img-responsive">';
-    } else {
-        echo '<img src="/pictures/event_default.jpg" class="img-responsive">';
-    }
+    echo '<img src="' . $event_image . '" class="img-responsive">';
     echo '</a>';
 
     echo "<h3>{$event['name']}</h3>";
