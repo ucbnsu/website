@@ -24,7 +24,7 @@ Gill-Sans
 }
 
 .menu-btn div {
-    position: absolute;
+    position: fixed;
     left: 100%;
     top: 64%;
     padding-right: 8px;
@@ -38,16 +38,16 @@ Gill-Sans
  
 .menu-btn span {
     display: block;
-    width: 26px;
-    height: 4px;
-    margin: 6px 0;
-    background: #ffffff;
+    width: 25px;
+    height: 1px;
+    margin: 9px 0;
+    background: #4A4A4A;
     z-index: 99;
-    border-radius: 2px;
+    border-radius: 100px;
 }
 
 #mobile-div {
-    background: #8AA27E;
+    background: white;
 }
 
 .responsive-menu {
@@ -59,7 +59,7 @@ Gill-Sans
 }
 
 .responsive-menu li {
-    background: #8AA27E;
+    background: white;
     border-left: 4px solid #ffffff;
     border-top: 2px solid #ffffff;
     margin: 5px;
