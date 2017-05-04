@@ -38,12 +38,26 @@ class FBHelper {
         return null;
     }
 
+    /**
+     * Retrieves events from NSU Facebook group.
+     * Makes a call to Facebook API: /group-id/events
+     *
+     * The since and until parameters are recommended to span a maximum of 6 months.
+     * The paremeters are calculated on the fly, and may be adjusted if necessary.
+     */
     function getEvents() {
+        $startTime = new DateTime();
+        $untilTime = new DateTime();
+
+        // get all events from 5 months ago to events scheduled in next month
+        $startTime->sub(new DateInterval('P5M'));
+        $untilTime->add(new DateInterval('P1M'));
+
         $method = 'GET';
         $endpoint = '/' . $this->gid . '/events';
         $params = [
-            'since' => $this->eventsinfo['start'],
-            'until' => $this->eventsinfo['end'],
+            'since' => $startTime->getTimestamp(),
+            'until' => $untilTime->getTimestamp(),
         ];
 
         $event_arr_tmp = $this->sendRequest($method, $endpoint, $params);
