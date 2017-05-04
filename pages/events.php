@@ -8,6 +8,12 @@ $db->connect();
 $events = $db->loadEvents();
 
 // sort events by timestamp
+try {
+    $numDisplay = $ini_array['events']['numDisplay'];
+} catch (Exception $e) {
+    $numDisplay = 10;
+}
+
 $curtimestamp = (new DateTime())->getTimestamp();
 $events_past = array();
 $events_future = array();
@@ -19,8 +25,13 @@ foreach ($events as $event) {
         $events_future[$timestamp] = $event;
     }
 }
-ksort($events_past, SORT_NUMERIC);
+
 ksort($events_future, SORT_NUMERIC);
+$events_future = array_slice($events_future, 0, $numDisplay);
+
+// recent events first
+krsort($events_past, SORT_NUMERIC);
+$events_past = array_slice($events_past, 0, $numDisplay);
 ?>
 
 <?php

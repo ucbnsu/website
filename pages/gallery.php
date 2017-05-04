@@ -2,9 +2,6 @@
 require_once 'settings.php';
 require_once 'database.php';
 
-?>
-
-<?php
 function getAlbumLink($albumId) {
     $link = 'https://www.facebook.com/media/set/?set=oa.';
     return $link . $albumId . '&type=3';
@@ -20,11 +17,25 @@ function albumHtml($album) {
     echo "<p class=\"text-right\"><a style=\"color:black\" href=\"{$albumUrl}\">Go to Album</a></p>";
     echo "</div>";
 }
+
+/**
+ * Displays photo albums (aka gallery) from the database.
+ */
 function displayAlbums() {
     $db = new DBHelper();
     $db->connect();
     $albums = $db->loadGallery();
 
+    // max. number of albums defined in config
+    try {
+        global $ini_array;
+        $numDisplay = $ini_array['gallery']['numDisplay'];
+    } catch (Exception $e) {
+        $numDisplay = 24;
+    }
+    $albums = array_slice($albums, 0, $numDisplay);
+
+    // display 1 row at a time for bootstrap
     $i = 0;
     while ($i < count($albums)) {
         $row = array_slice($albums, $i, min(3, count($albums) - $i));

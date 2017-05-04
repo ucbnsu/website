@@ -12,6 +12,12 @@ groupid = "2200207758"
 token = ""
 
 [events]
+# number of events to show on events page
+numDisplay = "12"
 # Any FB events to include besides those listed in NSU group
 #additionalEvents[] = "0"
 #additionalEvents[] = "1"
+
+[gallery]
+# max. number of album galleries to show
+numDisplay = "25"
