@@ -21,6 +21,8 @@ Gill-Sans
 {
     display: none;
     height: 30px;
+	margin-top: 12px;
+	margin-bottom: 3px;
 }
 
 .menu-btn div {
@@ -30,9 +32,9 @@ Gill-Sans
     padding-right: 8px;
     margin-top: -0.50em;
     line-height: 1.2;
-    font-size: 18px;
+    font-size: 5px;
     font-weight: 200;
-    vertical-align: middle;
+    vertical-align: middle
     z-index: 99;
 }
  
@@ -47,6 +49,11 @@ Gill-Sans
 }
 
 #mobile-div {
+	position: fixed;
+	width: 105%;
+	z-index: 99;
+	overflow-x:hidden;
+    opacity: 0.94;
     background: white;
 }
 
@@ -194,8 +201,10 @@ span
 
 #form_submit:hover
 {
-    background-color: white;
+	border-color: slategray;
+    background-color: slategray;
     color: #8AA27E;
+	color: white;
 }
 
 
@@ -307,7 +316,7 @@ span
 
 #general_content
 {
-    margin: 10px 0 0 10px;
+    margin: 0 auto;
     padding: 10px;
 }
 
@@ -610,8 +619,11 @@ html
 body 
 {
   /* Margin bottom by footer height */
-  margin-bottom: 500px;
-	overflow-x:hidden;
+  	margin-bottom: 500px;
+}
+.wrapper-x
+{
+	overflow-x:hidden !important;
 }
 .footer 
 {
@@ -623,4 +635,23 @@ body
   min-height: 300px;
   max-height: 500px;
 }
-
+#link
+{
+	margin: 10px;
+	margin-bottom: 22px;
+	box-shadow: 0 2px 10px 0 lightgray;
+	background-color:white;
+	border-color: white;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 5px;
+	text-decoration: none;
+	display: inline-block
+}
+#link:hover
+{
+	color: white;
+	background-color: slategray;
+	border-color: slategray;
+	opacity: 0.80;
+}

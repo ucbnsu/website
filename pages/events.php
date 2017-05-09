@@ -83,26 +83,29 @@ function displayEvents($events_arr) {
 <head>
 	<?php include 'head.php' ?>
 </head>
-<body>
-    <?php include 'header.php' ?>
+<div class="wrapper-x">
+	<body>
+		<?php include 'header.php' ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h1>Upcoming events</h1>
-            </div>
-        </div>
-
-        <?php displayEvents($events_future); ?>
-
-        <div class="row">
-            <div class="col-md-8">
-                <h1>Past events</h1>
-            </div>
-        </div>
-
-        <?php displayEvents($events_past); ?>
-    </div>
-    <?php include 'footer.php' ?>
-</body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h1>Upcoming events</h1>
+				</div>
+			</div>
+			<div id="future">
+				<?php displayEvents($events_future); ?>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<h1>Past events</h1>
+				</div>
+			</div>
+			<div id="past">
+				<?php displayEvents($events_past); ?>
+			</div>
+		</div>
+		<?php include 'footer.php' ?>
+	</body>
+</div>
 </html>
