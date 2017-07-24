@@ -5,7 +5,7 @@
     <script src="/js/roster.js"></script>
     <script src="/js/core.js"></script>
 </head>
-<body>
+<body style="overflow-x:hidden !important;">
 
 <?php include 'header.php'; ?>
 
@@ -14,7 +14,7 @@
     <center>
         <?php include 'display_core_info.php'; ?>
     </center>
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-sm-6 col-md-offset-3">
         <form>
             <select id="roster_select">
             </select>

@@ -49,8 +49,8 @@ for ($i = $member_start_index; $i < count($spreadsheet_data); $i++) {
     }
 
     $output .= '<div class="core_member">';
-    $output .= '<table>';
-    $output .= '<tr>';
+    $output .= '<table class="table-hover">';
+    $output .= '<tbody><tr>';
     
     // If we have a link to the picture display it, otherwise use a filler
     $output .= '<td class="core_member_img_td">';
@@ -97,10 +97,10 @@ for ($i = $member_start_index; $i < count($spreadsheet_data); $i++) {
     if (!$img_found) {
         $output .= '<img src="/pictures/core_filler.png" alt="">';
     }
-    $output .= '</td>';
+    $output .= '</td></tr><tr>';
 
     $output .= '<td class="core_member_data_td">';
-    $output .= '<table class="core_data">';
+    $output .= '<table class="core_data"><tbody>';
 
     // Display name
     $output .= '<tr class="core_title">';
@@ -133,10 +133,10 @@ for ($i = $member_start_index; $i < count($spreadsheet_data); $i++) {
     }
 
     // Close tags
-    $output .= '</table>';
+    $output .= '</tbody></table>';
     $output .= '</td>';
     $output .= '</tr>';
-    $output .= '</table>';
+    $output .= '</tbody></table>';
     $output .= '</div>';
 }
 

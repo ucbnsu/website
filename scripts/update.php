@@ -4,7 +4,7 @@
  * gallery
  * events
  */
-$WEBPATH = '/home/n/ns/nsu/public_html';
+$WEBPATH = '/Users/rayne/NSU/website';
 chdir( $WEBPATH . '/pages');
 
 include 'nsu_util.php';

@@ -52,19 +52,21 @@ function displayAlbums() {
 <head>
 	<?php include 'head.php' ?>
 </head>
-<body>
-    <?php include 'header.php' ?>
+<div class="wrapper-x">
+	<body>
+		<?php include 'header.php' ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h1>Past Events</h1>
-            </div>
-        </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<h1>Past Events</h1>
+				</div>
+			</div>
 
-        <?php displayAlbums(); ?>
+			<?php displayAlbums(); ?>
 
-    </div>
-    <?php include 'footer.php' ?>
-</body>
+		</div>
+		<?php include 'footer.php' ?>
+	</body>
+</div>
 </html>

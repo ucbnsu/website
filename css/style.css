@@ -290,6 +290,12 @@ span
     padding: 1px 4px;
 }
 
+.footer_link:hover
+{
+	border-width:5px;
+	border-radius:10px;
+}
+
 .footer h2
 {
     font-size: 1.5em;
@@ -373,19 +379,24 @@ button:hover
 
 .core_member
 {
-    padding: 10px 5px 5px 5px;
+	background-color: white;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .core_member img
 {
     width: 300px;
     height: 300px;
-    border: 5px #ffa7af solid;
+    /*border: 5px #ffa7af solid;*/
+	border-radius: 50%;
 }
 
 .core_member_img_td
 {
-    vertical-align: top;
+	text-align:center;
+    vertical-align:middle;
+	padding-bottom:10px;
 }
 
 .core_member_data_td
@@ -421,13 +432,13 @@ button:hover
 
 .core_title
 {
-    background-color: #ffa7af;
+    /*background-color: #ffa7af;*/
 }
 .core_title td
 {
     text-align: center;
     font-size: 25px;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
 }
 
 .core_hr
@@ -630,6 +641,7 @@ body
   box-shadow: 0 4px 8px 0 lightgray, 0 6px 20px 0 lightgray;
   position: absolute;
   bottom: 0;
+	left: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   min-height: 300px;
