@@ -4,7 +4,9 @@
  * gallery
  * events
  */
-$WEBPATH = '/Users/rayne/NSU/website';
+
+/* If you change $WEBPATH locally DO NOT COMMIT IT! */
+$WEBPATH = '/home/n/ns/nsu/public_html';
 chdir( $WEBPATH . '/pages');
 
 include 'nsu_util.php';
