@@ -42,7 +42,7 @@
                 <a style="color:black" href="http://ucsdnsu.weebly.com/" target="_blank">UC San Diego Nikkei Student Union</a><br>
                 <a style="color:black" href="https://www.facebook.com/groups/117317368325408/" target="_blank">CSUF Nikkei Student Union</a><br>
                 <a style="color:black" href="http://www.csulb.edu/org/cultural/nikkei/" target="_blank">CSULB Nikkei Student Union</a><br>
-                <a style="color:black" href="https://jsaucsc.wordpress.com" target="_blank">UCSC Japanese Student Association</a><br>
+                <a style="color:black" href="http://jsaucsc.wixsite.com/jsaucsc" target="_blank">UCSC Japanese Student Association</a><br>
                 <a style="color:black" href="https://www.facebook.com/groups/CPPNSU/" target="_blank">Cal Poly Pomona Nikkei Student Union</a><br>
             </div>
         </div>
