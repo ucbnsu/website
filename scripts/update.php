@@ -5,8 +5,7 @@
  * events
  */
 
-/* If you change $WEBPATH locally DO NOT COMMIT IT! */
-$WEBPATH = '/home/n/ns/nsu/public_html';
+$WEBPATH = realpath(__DIR__ . '/..');
 chdir( $WEBPATH . '/pages');
 
 include 'nsu_util.php';
