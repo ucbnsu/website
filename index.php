@@ -16,8 +16,8 @@
 			<?php include_once("pages/analyticstracking.php") ?>
 
 			<div class="row">
-				<div style="background-image: url(header.jpg); overflow:hidden; background-size: cover; background-position: center; height: auto" />
-					<img id="homepage_image" src="pictures/homepage_image.png" alt="">
+				<div style="background-image: url(header.jpg); overflow:hidden; background-size: cover; background-position: center; height:auto;" />
+					<img id="homepage_image" src="pictures/NSU_Logo.jpg" alt="" style="display:block; margin-left:auto; margin-right:auto; width:15%;" />
 				</div>
 			</div>
 			<div class="row">
