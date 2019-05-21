@@ -41,7 +41,6 @@
 					</div>
 				</div>
 			</div>
-			<img id="welcome_week" src="pictures/WelcomeSpring2019.jpg" alt="" style="display:block; width:50%; height:50%; margin-left:auto; margin-right:auto;"/>
 			<div class="row">
 				<div class="container">
 					<div class="blurb">
